@@ -41,11 +41,11 @@ public class ShopController {
     }
 
     @GetMapping("/search")
-    public Map<UUID, SearchResult> search(@RequestParam("pattern") String pattern) {
+    public Collection<SearchResult> search(@RequestParam("pattern") String pattern) {
 
         Map<UUID, SearchResult> result = searchService.search(pattern);
         Collection<SearchResult> results = result.values().stream().toList();
 
-        return result;
+        return results;
     }
 }
