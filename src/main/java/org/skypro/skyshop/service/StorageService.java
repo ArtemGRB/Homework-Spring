@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -75,6 +76,10 @@ public class StorageService {
                         Map.Entry::getValue
                 ));
         return sum;
+    }
+
+    public Optional<Product> getProductById(UUID id){
+        return Optional.ofNullable(storageProduct.get(id));
     }
 
 }

@@ -39,30 +39,4 @@ public class DiscountedProduct extends Product {
     }
 
 
-    public static final class Article {
-
-        private String title;
-        private String article;
-
-        @Override
-        public String toString() {
-            return title + '\'' + article;
-        }
-
-        public String getTitle() {
-            return title;
-        }
-
-        public void setTitle(String title) {
-            this.title = title;
-        }
-
-        public String getArticle() {
-            return article;
-        }
-
-        public void setArticle(String article) {
-            this.article = article;
-        }
-    }
 }
