@@ -16,7 +16,6 @@ public class BasketItem {
         this.quantity = quantity;
     }
 
-    @Bean
     public Product getProduct() {
         return product;
     }

@@ -20,10 +20,6 @@ public class BasketSevice {
         this.storageService = storageService;
     }
 
-    @Bean
-    public BasketSevice greteBasketService(ProductBasket productBasket, StorageService storageService) {
-        return new BasketSevice(productBasket, storageService);
-    }
 
     public void addProductToBasket(UUID id) {
         Optional<Product> product = storageService.getProductById(id);
