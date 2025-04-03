@@ -33,4 +33,6 @@ public class SimpleProduct extends Product {
     public String toString() {
         return getName() + ": " + price;
     }
+
+
 }

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
+import java.util.Objects;
+
 public class BasketItem {
 
     private Product product;
@@ -27,5 +29,17 @@ public class BasketItem {
     @Override
     public String toString() {
         return product + "количество: " + quantity;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        BasketItem that = (BasketItem) o;
+        return quantity == that.quantity && Objects.equals(product, that.product);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(product, quantity);
     }
 }
